@@ -3,16 +3,10 @@
 from __future__ import unicode_literals
 from django.utils.translation import ugettext_lazy as _
 help_texts = {
-    'lino_care.lib.clocking.models.ServiceReport' : _("""A service report is a document used in various discussions with
-a stakeholder."""),
-    'lino_care.lib.clocking.models.ServiceReport.user' : _("""This can be empty and will then show the working time of all
-users."""),
     'lino_care.lib.care.migrate.Migrator' : _("""The standard migrator for care."""),
     'lino_care.lib.care.user_types.EndUser' : _("""An end user is somebody who uses our software and may report
 tickets, but won't work on them."""),
     'lino_care.lib.care.user_types.Consultant' : _("""A consultant is somebody who may both report tickets and work
-on them."""),
-    'lino_care.lib.care.user_types.Developer' : _("""A developer is somebody who may both report tickets and work
 on them."""),
     'lino_care.lib.care.user_types.Senior' : _("""A senior developer is a developer who is additionally
 responsible for triaging tickets"""),
