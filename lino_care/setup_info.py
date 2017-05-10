@@ -77,8 +77,6 @@ lino_care.lib.cal
 lino_care.lib.cal.fixtures
 lino_care.lib.courses
 lino_care.lib.tickets
-lino_care.lib.clocking
-lino_care.lib.clocking.fixtures
 """.splitlines() if n])
 
 SETUP_INFO.update(message_extractors={

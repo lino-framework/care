@@ -33,7 +33,7 @@ class TicketDetail(TicketDetail):
 
     bottom_box = """
     faculties.DemandsByDemander:20 votes.VotesByVotable:20 
-    deploy.DeploymentsByTicket:20 clocking.SessionsByTicket:20
+    deploy.DeploymentsByTicket:20 #clocking.SessionsByTicket:20
     """
 
     more = dd.Panel("""
