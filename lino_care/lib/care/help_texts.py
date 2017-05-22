@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 help_texts = {
     'lino_care.lib.care.migrate.Migrator' : _("""The standard migrator for care."""),
     'lino_care.lib.care.user_types.EndUser' : _("""An end user is somebody who uses our software and may report
-tickets, but won't work on them."""),
+tickets, but won’t work on them."""),
     'lino_care.lib.care.user_types.Consultant' : _("""A consultant is somebody who may both report tickets and work
 on them."""),
     'lino_care.lib.care.user_types.Senior' : _("""A senior developer is a developer who is additionally
