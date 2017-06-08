@@ -71,8 +71,8 @@ lino_care.lib.care.fixtures
 lino_care.lib.contacts
 lino_care.lib.public
 lino_care.lib.topics
-lino_care.lib.users
-lino_care.lib.users.fixtures
+lino_care.lib.auth
+lino_care.lib.auth.fixtures
 lino_care.lib.cal
 lino_care.lib.cal.fixtures
 lino_care.lib.courses
