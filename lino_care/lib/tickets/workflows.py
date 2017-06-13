@@ -49,7 +49,7 @@ class TicketAction(dd.ChangeStateAction):
     def get_action_permission(self, ar, obj, state):
         me = ar.get_user()
         if obj.user != me:
-            if not me.profile.has_required_roles([Triager]):
+            if not me.user_type.has_required_roles([Triager]):
                 return False
         return super(TicketAction,
                      self).get_action_permission(ar, obj, state)
@@ -202,7 +202,7 @@ class VoteAction(dd.ChangeStateAction):
             else:
                 mgr = obj.user
             if mgr != me:
-                if not me.profile.has_required_roles([Triager]):
+                if not me.user_type.has_required_roles([Triager]):
                     return False
         # if self.target_state.name == 'watching':
         #     print("20170115", mgr, self)
