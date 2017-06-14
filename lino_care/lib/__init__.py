@@ -9,7 +9,7 @@
     cal
     contacts
     care
-    auth
+    users
     topics
     tickets
 

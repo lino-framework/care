@@ -14,7 +14,7 @@ from lino.api import dd
 
 TICKET_STATES = Cycler(TicketStates.objects())
 
-from lino_noi.lib.auth.models import create_user
+from lino_noi.lib.users.models import create_user
 
 def faculty(name, fr, en, **kw):
     kw.update(**dd.babelkw('name', de=name, fr=fr, en=en))
@@ -35,7 +35,7 @@ def Topic(name, **kw):
 
 def ticket(username, summary, en, faculty=None, **kw):
     ar = rt.login(username)
-    u = ar.get_user() # rt.models.auth.User.objects.get(username=user)
+    u = ar.get_user() # rt.models.users.User.objects.get(username=user)
     if en and u.language != 'de':
         summary = en
     kw.update(summary=summary, user=u)
@@ -55,12 +55,12 @@ def competence(username, first_name, faculty, **kw):
         end_user=Person.objects.get(
             name=first_name))
     kw.update(faculty=faculty)
-    kw.update(user=rt.models.auth.User.objects.get(username=username))
+    kw.update(user=rt.models.users.User.objects.get(username=username))
     return rt.models.faculties.Competence(**kw)
 
 
 def vote(user, ticket, state, **kw):
-    u = rt.models.auth.User.objects.get(username=user)
+    u = rt.models.users.User.objects.get(username=user)
     t = rt.models.tickets.Ticket.objects.get(pk=ticket)
     s = rt.models.votes.VoteStates.get_by_name(state)
     return rt.models.votes.Vote(user=u, votable=t, state=s, **kw)
@@ -68,7 +68,7 @@ def vote(user, ticket, state, **kw):
 
 
 def objects():
-    UserTypes = rt.actors.auth.UserTypes
+    UserTypes = rt.actors.users.UserTypes
     yield create_user("alex", UserTypes.user)
     yield create_user("berta", UserTypes.user)
     yield create_user("christa", UserTypes.user)
@@ -77,7 +77,7 @@ def objects():
 
     prj = rt.models.tickets.Project(name=_("General"))
     yield prj
-    # for u in rt.models.auth.User.objects.all():
+    # for u in rt.models.users.User.objects.all():
     #     yield rt.models.tickets.Competence(project=prj, user=u)
 
     # yield S(_("At home"))  # "Bei mir zu Hause"
