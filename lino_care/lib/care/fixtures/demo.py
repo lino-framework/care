@@ -43,7 +43,7 @@ def ticket(username, summary, en, faculty=None, **kw):
     if not 'state' in kw:
         kw.update(state=TICKET_STATES.pop())
     t = create_row(rt.models.tickets.Ticket, **kw)
-    t.after_ui_save(ar, None)  # create author's vote
+    t.after_ui_create(ar)  # create author's vote
     yield t
     if faculty is not None:
         yield rt.models.faculties.Demand(demander=t, skill=faculty)
