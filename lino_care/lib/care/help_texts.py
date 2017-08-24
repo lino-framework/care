@@ -13,7 +13,7 @@ on them."""),
 responsible for triaging tickets"""),
     'lino_care.lib.care.user_types.SiteAdmin' : _("""Can do everything."""),
     'lino_care.lib.tickets.Plugin' : _("""Adds the lino_xl.lib.votes plugin."""),
-    'lino_care.lib.tickets.models.TicketDetail' : _("""Customized detail_lyout for Tickets.  Replaces waiting_for by
+    'lino_care.lib.tickets.TicketDetail' : _("""Customized detail_lyout for Tickets.  Replaces waiting_for by
 faculties"""),
-    'lino_care.lib.users.desktop.UserDetail' : _("""Layout of User Detail in Lino Care."""),
+    'lino_care.lib.users.UserDetail' : _("""Layout of User Detail in Lino Care."""),
 }
