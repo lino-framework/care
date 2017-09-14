@@ -14,7 +14,7 @@ from lino.api import dd
 
 TICKET_STATES = Cycler(TicketStates.objects())
 
-from lino_noi.lib.users.models import create_user
+from lino.modlib.users.utils import create_user
 
 def faculty(name, fr, en, **kw):
     kw.update(**dd.babelkw('name', de=name, fr=fr, en=en))
