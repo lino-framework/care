@@ -42,7 +42,7 @@ class Person(Person):
 
 class PersonDetail(PersonDetail):
     
-    main = "general contact skills tickets"
+    main = "general contact #skills"
 
     general = dd.Panel("""
     overview info_box
@@ -57,27 +57,27 @@ class PersonDetail(PersonDetail):
     
     contact = dd.Panel("""
     address_box:60 contact_box:30
-    remarks topics.InterestsByPartner
+    remarks faculties.OffersByEndUser
     """, label=_("Contact"))
 
-    skills = dd.Panel("""
-    faculties.OffersByEndUser tickets.SuggestedTicketsByEndUser
-    """, label=dd.plugins.faculties.verbose_name)
+    # skills = dd.Panel("""
+    # topics.InterestsByPartner #tickets.SuggestedTicketsByEndUser
+    # """, label=dd.plugins.faculties.verbose_name)
 
-    tickets = dd.Panel("""
-    tickets.TicketsByEndUser tickets.ProjectsByPerson
-    """, label=dd.plugins.tickets.verbose_name)
+    # tickets = dd.Panel("""
+    # tickets.TicketsByEndUser tickets.ProjectsByPerson
+    # """, label=dd.plugins.tickets.verbose_name)
 
 
     name_box = "last_name first_name:15 gender #title:10"
 
     
 class CompanyDetail(CompanyDetail):
-    main = "general contact skills tickets"
+    main = "general contact #skills #tickets"
 
     general = dd.Panel("""
     overview info_box
-    contacts.RolesByCompany
+    contacts.RolesByCompany faculties.OffersByEndUser
     """, label=_("General"))
 
     info_box = """
@@ -91,13 +91,13 @@ class CompanyDetail(CompanyDetail):
     remarks
     """, label=_("Contact"))
 
-    skills = dd.Panel("""
-    faculties.OffersByEndUser topics.InterestsByPartner
-    """, label=dd.plugins.faculties.verbose_name)
+    # skills = dd.Panel("""
+    # faculties.OffersByEndUser topics.InterestsByPartner
+    # """, label=dd.plugins.faculties.verbose_name)
 
-    tickets = dd.Panel("""
-    tickets.TicketsByEndUser tickets.ProjectsByCompany
-    """, label=dd.plugins.tickets.verbose_name)
+    # tickets = dd.Panel("""
+    # tickets.TicketsByEndUser tickets.ProjectsByCompany
+    # """, label=dd.plugins.tickets.verbose_name)
 
 
 # @dd.receiver(dd.post_analyze)

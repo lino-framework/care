@@ -12,7 +12,7 @@ SETUP_INFO = dict(
                       'djangorestframework'],
     # tests_require=['pytest', 'mock'],
     test_suite='tests',
-    description=("A social ticket tracking system"),
+    description=("A database for managing a network of helpers."),
     long_description="""\
 .. image:: https://readthedocs.org/projects/lino/badge/?version=latest
     :alt: Documentation Status
@@ -30,8 +30,7 @@ SETUP_INFO = dict(
 .. image:: https://img.shields.io/pypi/l/lino-care.svg
     :target: https://pypi.python.org/pypi/lino-care/
 
-Lino Care is a customizable ticket management and time tracking
-system to use when time is more than money.
+Lino Care is for managing a catalog of people who care.
 
 - The central project homepage is http://care.lino-framework.org
 
@@ -69,6 +68,7 @@ lino_care.lib
 lino_care.lib.care
 lino_care.lib.care.fixtures
 lino_care.lib.contacts
+lino_care.lib.contacts.fixtures
 lino_care.lib.public
 lino_care.lib.topics
 lino_care.lib.users
