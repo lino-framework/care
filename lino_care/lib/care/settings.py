@@ -48,28 +48,28 @@ class Site(Site):
         yield super(Site, self).get_installed_apps()
         # yield 'lino.modlib.extjs'
         # yield 'lino.modlib.bootstrap3'
-        yield 'lino.modlib.gfks'
+        # yield 'lino.modlib.gfks'
         # yield 'lino.modlib.system'
-        # yield 'lino.modlib.users'
+        yield 'lino.modlib.users'
         yield 'lino_care.lib.contacts'
-        yield 'lino_care.lib.users'
+        # yield 'lino_care.lib.users'
         # yield 'lino_care.lib.cal'
         # yield 'lino_xl.lib.extensible'
         # yield 'lino_care.lib.courses'
         # yield 'lino_care.lib.products'
 
-        yield 'lino_care.lib.topics'
-        yield 'lino_xl.lib.votes'
-        yield 'lino_care.lib.tickets'
+        # yield 'lino_care.lib.topics'
+        # yield 'lino_xl.lib.votes'
+        # yield 'lino_care.lib.tickets'
         yield 'lino_xl.lib.faculties'
-        yield 'lino_xl.lib.deploy'
+        #yield 'lino_xl.lib.deploy'
         # yield 'lino_care.lib.clocking'
         # yield 'lino_xl.lib.lists'
         # yield 'lino_xl.lib.blogs'
 
-        yield 'lino.modlib.changes'
-        yield 'lino.modlib.notify'
-        yield 'lino.modlib.uploads'
+        #yield 'lino.modlib.changes'
+        #yield 'lino.modlib.notify'
+        #yield 'lino.modlib.uploads'
         # yield 'lino_xl.lib.outbox'
         # yield 'lino_xl.lib.excerpts'
         yield 'lino.modlib.export_excel'
@@ -88,12 +88,12 @@ class Site(Site):
         # yield 'lino_xl.lib.meetings'
 
 
-    def setup_plugins(self):
-        super(Site, self).setup_plugins()
-        # self.plugins.comments.configure(
-        #     commentable_model='tickets.Ticket')
-        self.plugins.faculties.configure(
-            demander_model='tickets.Ticket')
+    # def setup_plugins(self):
+    #     super(Site, self).setup_plugins()
+    #     # self.plugins.comments.configure(
+    #     #     commentable_model='tickets.Ticket')
+    #     self.plugins.faculties.configure(
+    #         demander_model=None)
         # self.plugins.tickets.configure(
         #     site_model='cal.Room',
         #     milestone_model='courses.Course')
@@ -112,13 +112,13 @@ class Site(Site):
         # tb.add_action(self.models.tickets.TicketsToTriage)
         # tb.add_action(self.models.tickets.TicketsToTalk)
         # tb.add_action(self.modules.tickets.TicketsToDo)
-        tb.add_action(self.modules.tickets.RefTickets)
-        tb.add_action(self.models.tickets.AllTickets)
-        tb.add_action(
-            self.models.tickets.AllTickets.insert_action,
-            label=_("Submit a ticket"))
+        # tb.add_action(self.modules.tickets.RefTickets)
+        # tb.add_action(self.models.tickets.AllTickets)
+        # tb.add_action(
+        #     self.models.tickets.AllTickets.insert_action,
+        #     label=_("Submit a ticket"))
 
-        a = self.models.auth.MySettings.default_action
+        a = self.models.users.MySettings.default_action
         tb.add_instance_action(
             user, action=a, label=_("My settings"))
         # handler = self.action_call(None, a, dict(record_id=user.pk))
@@ -130,20 +130,20 @@ class Site(Site):
     def do_site_startup(self):
         super(Site, self).do_site_startup()
 
-        from lino.modlib.changes.models import watch_changes as wc
+        # from lino.modlib.changes.models import watch_changes as wc
 
-        wc(self.modules.tickets.Ticket)
-        wc(self.modules.comments.Comment, master_key='owner')
-        # wc(self.modules.clocking.Session, master_key='owner')
+        # wc(self.modules.tickets.Ticket)
+        # wc(self.modules.comments.Comment, master_key='owner')
+        # # wc(self.modules.clocking.Session, master_key='owner')
         
-        if self.is_installed('votes'):
-            wc(self.modules.votes.Vote, master_key='votable')
+        # if self.is_installed('votes'):
+        #     wc(self.modules.votes.Vote, master_key='votable')
 
-        if self.is_installed('deploy'):
-            wc(self.modules.deploy.Deployment, master_key='ticket')
+        # if self.is_installed('deploy'):
+        #     wc(self.modules.deploy.Deployment, master_key='ticket')
 
-        if self.is_installed('extjs'):
-            self.plugins.extjs.autorefresh_seconds = 0
+        # if self.is_installed('extjs'):
+        #     self.plugins.extjs.autorefresh_seconds = 0
 
         from lino.core.merge import MergeAction
         from lino_xl.lib.contacts.roles import ContactsStaff

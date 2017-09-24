@@ -18,63 +18,44 @@ all.
 from lino.core.roles import UserRole, SiteAdmin
 from lino_xl.lib.excerpts.roles import ExcerptsUser, ExcerptsStaff
 from lino_xl.lib.contacts.roles import ContactsUser, ContactsStaff
-from lino_xl.lib.courses.roles import CoursesUser
+#from lino_xl.lib.courses.roles import CoursesUser
 from lino.modlib.office.roles import OfficeStaff, OfficeUser
 # from lino.modlib.comments.roles import CommentsReader
 from lino.modlib.comments.roles import CommentsUser, CommentsStaff
-from lino_xl.lib.tickets.roles import TicketsUser, Searcher, Triager, TicketsStaff
-from lino_xl.lib.clocking.roles import Worker
-from lino_xl.lib.cal.roles import CalendarReader
-from lino_xl.lib.votes.roles import VotesStaff, VotesUser
+#from lino_xl.lib.tickets.roles import TicketsUser, Searcher, Triager, TicketsStaff
+#from lino_xl.lib.clocking.roles import Worker
+#from lino_xl.lib.cal.roles import CalendarReader
+#from lino_xl.lib.votes.roles import VotesStaff, VotesUser
 
 from lino.modlib.users.choicelists import UserTypes
 from django.utils.translation import ugettext_lazy as _
 
 
-class EndUser(OfficeUser, VotesUser, TicketsUser, CommentsUser):
-    """An **end user** is somebody who uses our software and may report
-    tickets, but won't work on them.
-
-    """
+class User(OfficeUser, CommentsUser, ExcerptsUser, ContactsUser):
     pass
 
 
-class Consultant(EndUser, Searcher, Worker, ExcerptsUser,
-                 ContactsUser, CoursesUser):
-    """A **consultant** is somebody who may both report tickets and work
-    on them.
-
-    """
+class Staff(User, ExcerptsStaff, CommentsStaff):
     pass
 
 
-
-class Senior(Consultant, Triager, ExcerptsStaff, CommentsStaff):
-    """A **senior developer** is a *developer* who is additionally
-    responsible for triaging tickets
-
-    """
-    pass
-
-
-class SiteAdmin(Senior, SiteAdmin, OfficeStaff, VotesStaff,
-                TicketsStaff, ContactsStaff, CommentsStaff):
+class SiteAdmin(Staff, SiteAdmin, OfficeStaff, ContactsStaff):
     """Can do everything."""
 
 
 # class Anonymous(CommentsReader, CalendarReader):
-class Anonymous(CalendarReader):
+class Anonymous(UserRole):
     pass
 
 UserTypes.clear()
 add = UserTypes.add_item
 add('000', _("Anonymous"),        Anonymous, 'anonymous',
     readonly=True, authenticated=False)
-add('100', _("User"),             EndUser, 'user')
-add('200', _("Consultant"),       Consultant, 'consultant')
+add('100', _("User"),             User, 'user')
+# add('200', _("Consultant"),       Consultant, 'consultant')
 # add('300', _("Hoster"),           Consultant, 'hoster')
 # add('400', _("Developer"),        Developer, 'developer')
-add('490', _("Senior developer"), Senior, 'senior')
+add('490', _("Staff"), Staff, 'staff')
 add('900', _("Administrator"),    SiteAdmin, 'admin')
 
 

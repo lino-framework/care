@@ -20,8 +20,7 @@ The ``lino-care`` package
 .. image:: https://img.shields.io/pypi/l/lino-care.svg
     :target: https://pypi.python.org/pypi/lino-care/
 
-Lino Care is a customizable ticket management and time tracking
-system to use when time is more than money.
+Lino Care is for managing a catalog of people who care.
 
 - The central project homepage is http://care.lino-framework.org
 
