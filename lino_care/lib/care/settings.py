@@ -25,10 +25,12 @@ class Site(Site):
 
     # project_model = 'tickets.Project'
     # project_model = 'deploy.Milestone'
-    textfield_format = 'html'
+    textfield_format = 'plain'
+    # textfield_format = 'html'
     user_types_module = 'lino_care.lib.care.user_types'
     workflows_module = 'lino_care.lib.care.workflows'
     obj2text_template = "**{0}**"
+    custom_layouts_module = 'lino_care.lib.care.layouts'
 
     default_build_method = 'appyodt'
     
@@ -52,6 +54,9 @@ class Site(Site):
         # yield 'lino.modlib.system'
         yield 'lino.modlib.users'
         yield 'lino_care.lib.contacts'
+        yield 'lino.modlib.comments'
+        yield 'lino_xl.lib.addresses'
+        yield 'lino_xl.lib.phones'
         # yield 'lino_care.lib.users'
         # yield 'lino_care.lib.cal'
         # yield 'lino_xl.lib.extensible'
