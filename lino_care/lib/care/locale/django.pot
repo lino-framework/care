@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lino-care 2017.2.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-09-05 22:35+0300\n"
+"POT-Creation-Date: 2017-10-10 17:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.5.1\n"
 
 #: lino_care/lib/cal/models.py:17
 msgid "Author"
@@ -29,9 +29,9 @@ msgstr ""
 msgid "Contact person"
 msgstr ""
 
-#: lino_care/lib/cal/models.py:33 lino_care/lib/care/fixtures/demo.py:78
-#: lino_care/lib/contacts/models.py:50 lino_care/lib/contacts/models.py:81
-#: lino_care/lib/tickets/models.py:24 lino_care/lib/users/desktop.py:29
+#: lino_care/lib/cal/models.py:33 lino_care/lib/contacts/models.py:50
+#: lino_care/lib/contacts/models.py:81 lino_care/lib/tickets/models.py:24
+#: lino_care/lib/users/desktop.py:29
 msgid "General"
 msgstr ""
 
@@ -40,66 +40,40 @@ msgid "The standard migrator for care."
 msgstr ""
 
 #: lino_care/lib/care/help_texts.py:8
-msgid ""
-"An end user is somebody who uses our software and may report\n"
-"tickets, but won't work on them."
-msgstr ""
-
-#: lino_care/lib/care/help_texts.py:10
-msgid ""
-"A consultant is somebody who may both report tickets and work\n"
-"on them."
-msgstr ""
-
-#: lino_care/lib/care/help_texts.py:12
-msgid ""
-"A senior developer is a developer who is additionally\n"
-"responsible for triaging tickets"
-msgstr ""
-
-#: lino_care/lib/care/help_texts.py:14
 msgid "Can do everything."
 msgstr ""
 
-#: lino_care/lib/care/help_texts.py:15
+#: lino_care/lib/care/help_texts.py:9
 msgid "Adds the lino_xl.lib.votes plugin."
 msgstr ""
 
-#: lino_care/lib/care/help_texts.py:16
+#: lino_care/lib/care/help_texts.py:10
 msgid ""
 "Customized detail_lyout for Tickets.  Replaces waiting_for by\n"
 "faculties"
 msgstr ""
 
-#: lino_care/lib/care/help_texts.py:18
+#: lino_care/lib/care/help_texts.py:12
 msgid "Layout of User Detail in Lino Care."
-msgstr ""
-
-#: lino_care/lib/care/settings.py:119
-msgid "Submit a ticket"
 msgstr ""
 
 #: lino_care/lib/care/settings.py:123
 msgid "My settings"
 msgstr ""
 
-#: lino_care/lib/care/user_types.py:71
+#: lino_care/lib/care/user_types.py:52
 msgid "Anonymous"
 msgstr ""
 
-#: lino_care/lib/care/user_types.py:73
+#: lino_care/lib/care/user_types.py:54
 msgid "User"
 msgstr ""
 
-#: lino_care/lib/care/user_types.py:74
-msgid "Consultant"
+#: lino_care/lib/care/user_types.py:58
+msgid "Staff"
 msgstr ""
 
-#: lino_care/lib/care/user_types.py:77
-msgid "Senior developer"
-msgstr ""
-
-#: lino_care/lib/care/user_types.py:78
+#: lino_care/lib/care/user_types.py:59
 msgid "Administrator"
 msgstr ""
 
