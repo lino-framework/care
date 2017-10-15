@@ -13,6 +13,7 @@ from lino.mixins import  Hierarchical
 from lino_xl.lib.contacts.models import *
 from lino.modlib.comments.mixins import Commentable
 from lino_xl.lib.phones.mixins import ContactDetailsOwner
+# from lino.modlib.printing.mixins import DirectPrintAction
 
 
 PartnerDetail.address_box = dd.Panel("""
@@ -33,6 +34,8 @@ PartnerDetail.contact_box = dd.Panel("""
 
 @dd.python_2_unicode_compatible
 class Person(Person, Commentable):
+
+    # do_print = DirectPrintAction()
     
     class Meta(Person.Meta):
         app_label = 'contacts'
