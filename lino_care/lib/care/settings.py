@@ -77,7 +77,7 @@ class Site(Site):
         #yield 'lino.modlib.notify'
         #yield 'lino.modlib.uploads'
         # yield 'lino_xl.lib.outbox'
-        # yield 'lino_xl.lib.excerpts'
+        yield 'lino_xl.lib.excerpts'
         yield 'lino.modlib.export_excel'
         # yield 'lino.modlib.tinymce'
         # yield 'lino.modlib.smtpd'
