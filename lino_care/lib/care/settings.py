@@ -57,7 +57,7 @@ class Site(Site):
         yield 'lino.modlib.comments'
         yield 'lino_xl.lib.addresses'
         yield 'lino_xl.lib.phones'
-        yield 'lino.modlib.plausibility'
+        yield 'lino.modlib.checkdata'
         # yield 'lino_care.lib.users'
         # yield 'lino_care.lib.cal'
         # yield 'lino_xl.lib.extensible'
