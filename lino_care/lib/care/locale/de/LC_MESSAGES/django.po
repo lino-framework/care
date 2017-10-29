@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lino-noi 0.0.2\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-10-10 17:51+0300\n"
+"POT-Creation-Date: 2017-10-29 06:53+0200\n"
 "PO-Revision-Date: 2017-03-20 07:46+0200\n"
 "Last-Translator: Luc Saffre <luc.saffre@gmail.com>\n"
 "Language: de\n"
@@ -30,9 +30,8 @@ msgstr ""
 msgid "Contact person"
 msgstr ""
 
-#: lino_care/lib/cal/models.py:33 lino_care/lib/contacts/models.py:50
-#: lino_care/lib/contacts/models.py:81 lino_care/lib/tickets/models.py:24
-#: lino_care/lib/users/desktop.py:29
+#: lino_care/lib/cal/models.py:33 lino_care/lib/contacts/models.py:150
+#: lino_care/lib/tickets/models.py:24 lino_care/lib/users/desktop.py:29
 msgid "General"
 msgstr ""
 
@@ -58,7 +57,7 @@ msgstr ""
 msgid "Layout of User Detail in Lino Care."
 msgstr ""
 
-#: lino_care/lib/care/settings.py:123
+#: lino_care/lib/care/settings.py:129
 msgid "My settings"
 msgstr ""
 
@@ -78,12 +77,12 @@ msgstr ""
 msgid "Administrator"
 msgstr ""
 
-#: lino_care/lib/contacts/models.py:20
+#: lino_care/lib/contacts/models.py:25
 msgid "Address"
 msgstr ""
 
-#: lino_care/lib/contacts/models.py:26 lino_care/lib/contacts/models.py:61
-#: lino_care/lib/contacts/models.py:92 lino_care/lib/users/desktop.py:69
+#: lino_care/lib/contacts/models.py:31 lino_care/lib/contacts/models.py:160
+#: lino_care/lib/users/desktop.py:69
 msgid "Contact"
 msgstr "Kontakt"
 
