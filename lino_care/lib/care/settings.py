@@ -133,32 +133,6 @@ class Site(Site):
         #                   handler=js_code(handler))
         
 
-    def do_site_startup(self):
-        super(Site, self).do_site_startup()
-
-        # from lino.utils.watch import watch_changes as wc
-
-        # wc(self.modules.tickets.Ticket)
-        # wc(self.modules.comments.Comment, master_key='owner')
-        # # wc(self.modules.clocking.Session, master_key='owner')
-        
-        # if self.is_installed('votes'):
-        #     wc(self.modules.votes.Vote, master_key='votable')
-
-        # if self.is_installed('deploy'):
-        #     wc(self.modules.deploy.Deployment, master_key='ticket')
-
-        # if self.is_installed('extjs'):
-        #     self.plugins.extjs.autorefresh_seconds = 0
-
-        from lino.core.merge import MergeAction
-        from lino_xl.lib.contacts.roles import ContactsStaff
-        lib = self.models
-        for m in (lib.contacts.Company, ):
-            m.define_action(merge_row=MergeAction(
-                m, required_roles=set([ContactsStaff])))
-            
-
 # the following line should not be active in a checked-in version
 #~ DATABASES['default']['NAME'] = ':memory:'
 
