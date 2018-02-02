@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2014-2017 Luc Saffre
+# Copyright 2014-2018 Luc Saffre
 # License: BSD (see file COPYING for details)
 
 # $ python setup.py test -s tests.PackagesTests.test_packages
@@ -8,8 +8,6 @@ SETUP_INFO = dict(
     name='lino-care',
     version='2017.2.0',
     install_requires=['lino-xl'],
-                      # 'channels',
-                      # 'djangorestframework'],
     # tests_require=['pytest', 'mock'],
     test_suite='tests',
     description=("A database for managing a network of helpers."),
