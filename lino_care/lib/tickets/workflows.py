@@ -71,15 +71,7 @@ class TicketAction(dd.ChangeStateAction):
                 raise Warning(msg.format(
                     action=self.label, states=self.required_vote_states))
 
-# class NotifyingTicketAction(TicketAction):
-    
-#     def get_notify_owner(self, ar, obj):
-#         return obj
 
-#     def get_notify_recipients(self, ar, obj):
-#         yield obj.get_notify_recipients(ar)
-
-    
 class MarkTicketOpened(TicketAction):
     """Mark this ticket as open.
     """
@@ -88,11 +80,6 @@ class MarkTicketOpened(TicketAction):
     required_states = 'talk new closed'
     # show_in_bbar = True
 
-    # def get_notify_subject(self, ar, obj):
-    #     subject = _("{user} opened {ticket}.").format(
-    #         user=ar.get_user(), ticket=obj)
-    #     return subject
-    
     
 class MarkTicketStarted(TicketAction):
     """Mark this ticket as started.
@@ -175,21 +162,6 @@ class VoteAction(dd.ChangeStateAction):
             ticket=obj.votable)
         return kwargs
     
-    # def get_notify_subject(self, ar, obj):
-    #     subject = _(self.msg_template).format(
-    #         user=ar.get_user(),
-    #         voter=obj.user,
-    #         vote=obj,
-    #         state=obj.state,
-    #         ticket=obj.votable)
-    #     return subject
-    
-    # def get_notify_owner(self, ar, obj):
-    #     return obj.votable.get_notify_owner(ar, obj)
-
-    # def get_notify_recipients(self, ar, obj):
-    #     yield obj.votable.get_notify_recipients(ar)
-
     def get_action_permission(self, ar, obj, state):
         if not obj.votable_id:
             return False
