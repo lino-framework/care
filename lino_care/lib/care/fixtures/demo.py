@@ -19,18 +19,18 @@ from lino.modlib.users.utils import create_user
 def faculty(name, fr, en, **kw):
     kw.update(**dd.babelkw('name', de=name, fr=fr, en=en))
     # kw.update(name=name, name_fr=name_fr, name_en=name_en)
-    return rt.modules.faculties.Faculty(**kw)
+    return rt.models.faculties.Faculty(**kw)
 
 
 # def S(name, **kw):
 #     kw.update(name=name)
-#     # return rt.modules.tickets.Site(**kw)
+#     # return rt.models.tickets.Site(**kw)
 #     return dd.plugins.tickets.site_model(**kw)
 
 
 def Topic(name, **kw):
     kw.update(**str2kw('name', name))
-    return rt.modules.topics.Topic(**kw)
+    return rt.models.topics.Topic(**kw)
 
 
 # def ticket(username, summary, en, faculty=None, **kw):
@@ -68,7 +68,7 @@ def Topic(name, **kw):
 
 
 def objects():
-    # UserTypes = rt.actors.users.UserTypes
+    # UserTypes = rt.models.users.UserTypes
     # yield create_user("alex", UserTypes.user)
     # yield create_user("berta", UserTypes.user)
     # yield create_user("christa", UserTypes.user)
@@ -84,7 +84,7 @@ def objects():
     # yield S("AZ Ephata")
     # yield S("Eupen")
 
-    # TopicGroup = rt.modules.topics.TopicGroup
+    # TopicGroup = rt.models.topics.TopicGroup
     # lng = TopicGroup(**str2kw('name', _("Languages")))
     # yield lng
     # fr = Topic(_("French"), topic_group=lng)
