@@ -43,10 +43,6 @@ class UserDetail(UserDetail):
     # """, label=dd.plugins.cal.verbose_name, required_roles=dd.login_required(OfficeUser))
 
 
-    # tickets = dd.Panel("""
-    # tickets.TicketsByReporter 
-    # """, label=_("Tickets"))
-
     box1 = """
     username user_type:20 initials #partner #user_site
     language id created modified
