@@ -25,7 +25,7 @@ class UserDetail(UserDetail):
 
     general = dd.Panel("""
     box1:45 working:15
-    faculties.OffersByEndUser
+    skills.OffersByEndUser
     """, label=_("General"))
 
     if dd.is_installed('working'):

@@ -16,10 +16,10 @@ TICKET_STATES = Cycler(TicketStates.objects())
 
 from lino.modlib.users.utils import create_user
 
-def faculty(name, fr, en, **kw):
+def skill(name, fr, en, **kw):
     kw.update(**dd.babelkw('name', de=name, fr=fr, en=en))
     # kw.update(name=name, name_fr=name_fr, name_en=name_en)
-    return rt.models.faculties.Faculty(**kw)
+    return rt.models.skills.Skill(**kw)
 
 
 # def S(name, **kw):
@@ -33,7 +33,7 @@ def Topic(name, **kw):
     return rt.models.topics.Topic(**kw)
 
 
-# def ticket(username, summary, en, faculty=None, **kw):
+# def ticket(username, summary, en, skill=None, **kw):
 #     ar = rt.login(username)
 #     u = ar.get_user() # rt.models.users.User.objects.get(username=user)
 #     if en and u.language != 'de':
@@ -45,18 +45,18 @@ def Topic(name, **kw):
 #     t = create_row(rt.models.tickets.Ticket, **kw)
 #     t.after_ui_create(ar)  # create author's vote
 #     yield t
-#     if faculty is not None:
-#         yield rt.models.faculties.Demand(demander=t, skill=faculty)
+#     if skill is not None:
+#         yield rt.models.skills.Demand(demander=t, skill=skill)
 
 
-# def competence(username, first_name, faculty, **kw):
+# def competence(username, first_name, skill, **kw):
 #     Person = rt.models.contacts.Person
 #     kw.update(
 #         end_user=Person.objects.get(
 #             name=first_name))
-#     kw.update(faculty=faculty)
+#     kw.update(skill=skill)
 #     kw.update(user=rt.models.users.User.objects.get(username=username))
-#     return rt.models.faculties.Competence(**kw)
+#     return rt.models.skills.Competence(**kw)
 
 
 # def vote(user, ticket, state, **kw):
@@ -100,73 +100,73 @@ def objects():
     # guitar = Topic(_("Guitar"), topic_group=music)
     # yield guitar
 
-    edu = faculty("Unterricht", "Cours", "Teaching")
+    edu = skill("Unterricht", "Cours", "Teaching")
     yield edu
-    yield faculty(
+    yield skill(
         "Französischunterricht", "Cours de francais", "French lessons",
         parent=edu)
-    yield faculty("Deutschunterricht", "Cours d'allemand",
+    yield skill("Deutschunterricht", "Cours d'allemand",
                   "German lessons", parent=edu)
-    math = faculty(
+    math = skill(
         "Matheunterricht", "Cours de maths", "Maths lessons",
         parent=edu)
     yield math
     
-    music = faculty("Musik", "Musique", "Music")
+    music = skill("Musik", "Musique", "Music")
     yield music
-    guitar = faculty(
+    guitar = skill(
         "Gitarrenunterricht",
         "Cours de guitare", "Guitar lessons", parent=music)
     yield guitar
-    piano = faculty(
+    piano = skill(
         "Klavierunterricht",
         "Cours de piano", "Piano lessons", parent=music)
     yield piano
 
-    home = faculty(
+    home = skill(
         "Haus und Garten", "Maison et jardin", "Home & Garden")
     yield home
 
-    yield faculty(
+    yield skill(
         "Kleider reparieren", "Réparer des vètements",
         "Repairing clothes", parent=home)
-    garden = faculty(
+    garden = skill(
         "Gartenarbeiten", "Travaux de jardin", "Garden works",
         parent=home)
     yield garden
-    repair = faculty(
+    repair = skill(
         "Reparaturarbeiten", "Travaux de réparation", "Repair works",
         parent=home)
     yield repair
-    renovate = faculty(
+    renovate = skill(
         "Renovierung", "Rénovation", "Renovation",
         parent=home)
     yield renovate
 
-    yield faculty("Fahrdienst", "Voiture", "Car driving")
-    commissions = faculty("Botengänge", "Commissions", "Shopping")
+    yield skill("Fahrdienst", "Voiture", "Car driving")
+    commissions = skill("Botengänge", "Commissions", "Shopping")
     yield commissions
-    yield faculty("Friseur", "Coiffure", "Hair cutting")
-    yield faculty("Babysitting", "Garde enfant", "Babysitting")
-    yield faculty("Gesellschafter für Senioren",
+    yield skill("Friseur", "Coiffure", "Hair cutting")
+    yield skill("Babysitting", "Garde enfant", "Babysitting")
+    yield skill("Gesellschafter für Senioren",
                   "Rencontres personnes agées",
                   "Mentoring elderly people")
-    yield faculty(
+    yield skill(
         "Hunde spazierenführen", "Chiens", "Go out with dogs")
-    traduire = faculty(
+    traduire = skill(
         "Übersetzungsarbeiten",
         "Traductions", "Translations")
     yield traduire
-    yield faculty("Briefe schreiben", "Écrire des lettres",
+    yield skill("Briefe schreiben", "Écrire des lettres",
                   "Write letters")
 
     # Person = rt.models.contacts.Person
     # kw.update(
     #     end_user=Person.objects.get(
     #         name=first_name))
-    # kw.update(faculty=faculty)
+    # kw.update(skill=skill)
     # kw.update(user=rt.models.users.User.objects.get(username=username))
-    # return rt.models.faculties.Competence(**kw)
+    # return rt.models.skills.Competence(**kw)
 
     # yield competence('alex', 'Alex', traduire)
     # yield competence('berta', 'Berta', traduire)
@@ -184,7 +184,7 @@ def objects():
     #     "Mein Wasserhahn tropft, wer kann mir helfen?",
     #     "My faucet is dripping, who can help?",
     #     state=TicketStates.closed,
-    #     faculty=repair)
+    #     skill=repair)
     # yield vote('alex', 1, 'done')
     # yield vote('eric', 1, 'cancelled')
     
@@ -192,15 +192,15 @@ def objects():
     #     "christa",
     #     "Mein Rasen muss gemäht werden. Donnerstags oder Samstags",
     #     "My lawn needs mowing. On Thursday or Saturday."
-    #     "", faculty=garden)
+    #     "", skill=garden)
     # Person = rt.models.contacts.Person
-    # # dora = dd.plugins.faculties.end_user_model.objects.get(
+    # # dora = dd.plugins.skills.end_user_model.objects.get(
     # dora = Person.objects.get(first_name="Dora")
     # yield ticket(  #3
     #     "eric",
     #     "Wer kann meinem Sohn Klavierunterricht geben?",
     #     "Who can give piano lessons to my son?",
-    #     faculty=piano, end_user=dora)
+    #     skill=piano, end_user=dora)
     
     # yield vote('christa', 3, 'candidate')
     
@@ -208,7 +208,7 @@ def objects():
     #     "alex",
     #     "Wer kann meiner Tochter Gitarreunterricht geben?",
     #     "Who can give guitar lessons to my daughter?",
-    #     faculty=guitar)
+    #     skill=guitar)
     
     # yield ticket(  #5
     #     "alex",
@@ -216,7 +216,7 @@ def objects():
     #     "Who would play music on my birthday party?",
     #     deadline=dd.demo_date(-20),
     #     state=TicketStates.opened,
-    #     faculty=music)
+    #     skill=music)
     # yield vote('christa', 5, 'candidate')
     # yield vote('eric', 5, 'candidate')
     
@@ -227,7 +227,7 @@ def objects():
     #     "Who helps my sont to prepare for a maths test on May 21?"
     #     " (5. grade PDS)",
     #     deadline=dd.demo_date().replace(month=5, day=21),
-    #     faculty=math)
+    #     skill=math)
     # yield ticket(
     #     "eric",
     #     "Wer kann meine Abschlussarbeit korrekturlesen?",
@@ -242,6 +242,6 @@ def objects():
     #     "Wer fährt für mich nach Aachen Windeln kaufen?",
     #     "Who would buy diapers for me in Aachen?",
     #     description="Ich darf selber nicht über die Grenze.",
-    #     faculty=commissions)
+    #     skill=commissions)
 
     # yield vote('eric', 8, 'assigned')

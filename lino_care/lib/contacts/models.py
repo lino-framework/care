@@ -60,7 +60,7 @@ class Person(Person, Commentable):
                 'contacts.Company', blank=True, null=True))
         fields.setdefault(
             'skill', models.ForeignKey(
-                'faculties.Faculty', blank=True, null=True))
+                'skills.Skill', blank=True, null=True))
         super(Person, cls).setup_parameters(fields)
     
     @classmethod
@@ -115,14 +115,14 @@ class Company(Company, Hierarchical, Commentable):
 class PersonDetail(PersonDetail):
     main = """
     overview:30 contact_box:40 contacts.RolesByPerson:30
-    faculties.OffersByEndUser:45 comments.CommentsByRFC:45
+    skills.OffersByEndUser:45 comments.CommentsByRFC:45
     """
     
     # main = "general #contact #more"
 
     # general = dd.Panel("""
     # overview:30 contact_box:40 contacts.RolesByPerson:30
-    # faculties.OffersByEndUser:45 comments.CommentsByRFC:45
+    # skills.OffersByEndUser:45 comments.CommentsByRFC:45
     # """, label=_("General"))
 
     contact_box = dd.Panel("""
@@ -146,7 +146,7 @@ class CompanyDetail(CompanyDetail):
 
     general = dd.Panel("""
     overview general_middle CompaniesByCompany
-    contacts.RolesByCompany:30 faculties.OffersByEndUser
+    contacts.RolesByCompany:30 skills.OffersByEndUser
     """, label=_("General"))
 
     general_middle = """
@@ -218,12 +218,12 @@ Persons.params_layout = 'observed_event start_date end_date skill company'
     
 #     contact = dd.Panel("""
 #     address_box:60 contact_box:30
-#     remarks faculties.OffersByEndUser
+#     remarks skills.OffersByEndUser
 #     """, label=_("Contact"))
 
 #     # skills = dd.Panel("""
 #     # topics.InterestsByPartner #tickets.SuggestedTicketsByEndUser
-#     # """, label=dd.plugins.faculties.verbose_name)
+#     # """, label=dd.plugins.skills.verbose_name)
 
 #     # tickets = dd.Panel("""
 #     # tickets.TicketsByEndUser tickets.ProjectsByPerson
@@ -238,7 +238,7 @@ Persons.params_layout = 'observed_event start_date end_date skill company'
 
 #     general = dd.Panel("""
 #     overview info_box
-#     contacts.RolesByCompany faculties.OffersByEndUser
+#     contacts.RolesByCompany skills.OffersByEndUser
 #     """, label=_("General"))
 
 #     info_box = """
@@ -253,8 +253,8 @@ Persons.params_layout = 'observed_event start_date end_date skill company'
 #     """, label=_("Contact"))
 
 #     # skills = dd.Panel("""
-#     # faculties.OffersByEndUser topics.InterestsByPartner
-#     # """, label=dd.plugins.faculties.verbose_name)
+#     # skills.OffersByEndUser topics.InterestsByPartner
+#     # """, label=dd.plugins.skills.verbose_name)
 
 #     # tickets = dd.Panel("""
 #     # tickets.TicketsByEndUser tickets.ProjectsByCompany
