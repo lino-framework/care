@@ -30,7 +30,7 @@ class Migrator(Migrator):
         - Interest.product becomes Interest.topic
         - Interest.site.partner becomes Interest.partner and if the site has
           no partner, create one.
-        - Rename Faculty.product_cat to topic_group
+        - Rename Skill.product_cat to topic_group
         - Rename Competence.product to Competence.topic
            
         """
@@ -38,8 +38,8 @@ class Migrator(Migrator):
         bv2kw = globals_dict['bv2kw']
         products_Product = rt.models.topics.Topic
         products_ProductCat = rt.models.topics.TopicGroup
-        faculties_Competence = rt.models.faculties.Competence
-        faculties_Faculty = rt.models.faculties.Faculty
+        skills_Competence = rt.models.faculties.Competence
+        faculties_Skill = rt.models.faculties.Skill
         tickets_Site = rt.models.tickets.Site
         tickets_Interest = rt.models.topics.Interest
         tickets_Ticket = rt.models.tickets.Ticket

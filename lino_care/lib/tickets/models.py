@@ -14,7 +14,7 @@ from lino.api import _
 
 class TicketDetail(TicketDetail):
     """Customized detail_lyout for Tickets.  Replaces `waiting_for` by
-    `faculties`
+    `skills`
 
     """
     main = "general more history_tab more2"
@@ -32,7 +32,7 @@ class TicketDetail(TicketDetail):
     """
 
     bottom_box = """
-    faculties.DemandsByDemander:20 votes.VotesByVotable:20 
+    skills.DemandsByDemander:20 votes.VotesByVotable:20 
     deploy.DeploymentsByTicket:20 #working.SessionsByTicket:20
     """
 

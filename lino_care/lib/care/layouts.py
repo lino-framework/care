@@ -7,6 +7,6 @@ from lino.api import rt
 # company contact_person contact_role
 # id user:10 language:8 build_time
 # body:40 #outbox.MailsByController:40 
-# faculties.DemandsByDemander faculties.AssignableWorkersByTicket
+# skills.DemandsByDemander skills.AssignableWorkersByTicket
 # """
 
