@@ -5,6 +5,8 @@ from django.utils.translation import ugettext_lazy as _
 
 help_texts = {
     'lino_care.lib.care.migrate.Migrator' : _("""The standard migrator for care."""),
+    'lino_care.lib.care.migrate.Migrator.migrate_from_1_0_1' : _("""Move Deployment and Milestone from 'tickets' to new plugin
+'deploy'."""),
     'lino_care.lib.care.user_types.SiteAdmin' : _("""Can do everything."""),
     'lino_care.lib.tickets.Plugin' : _("""Adds the lino_xl.lib.votes plugin."""),
     'lino_care.lib.tickets.TicketDetail' : _("""Customized detail_lyout for Tickets.  Replaces waiting_for by
