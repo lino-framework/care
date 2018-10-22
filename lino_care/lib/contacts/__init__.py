@@ -3,11 +3,6 @@
 """
 Lino Care extension of :mod:`lino_xl.lib.contacts`.
 
-.. autosummary::
-   :toctree:
-
-    models
-
 """
 
 from lino_xl.lib.contacts import Plugin
