@@ -8,13 +8,6 @@ ns = setup_from_tasks(
     locale_dir='lino_care/lib/care/locale',
 )
     # cleanable_files=['docs/api/lino_care.*'],
-    # demo_projects=[
-    #     'lino_care.projects.team.settings.demo'])
-    # demo_projects=[
-    #     'lino_care.projects.team.settings.demo',
-    #     'lino_care.projects.care.settings.demo',
-    #     'lino_care.projects.care_de.settings',
-    #     'lino_care.projects.vilma.settings.demo'])
 
 # The following demo databases use the database file of team, so there is no
 # need initialize them:
