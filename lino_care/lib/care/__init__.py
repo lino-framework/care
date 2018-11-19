@@ -7,11 +7,9 @@ The main plugin for Lino Care.
 .. autosummary::
    :toctree:
 
-    models
     fixtures.linotickets
     migrate
     user_types
-    workflows
 
 """
 
