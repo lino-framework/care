@@ -30,9 +30,9 @@ help_texts_builder_targets = {
 
 intersphinx_mapping = {}
 from atelier.sphinxconf import interproject
-interproject.configure(globals(), 'atelier')
-intersphinx_mapping['book'] = (
-    'http://www.lino-framework.org', None)
+interproject.configure(globals(), 'atelier lino_book')
+# intersphinx_mapping['book'] = (
+#     'http://www.lino-framework.org', None)
 
 
 # intersphinx_mapping = {}

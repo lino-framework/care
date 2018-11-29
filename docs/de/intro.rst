@@ -12,12 +12,11 @@ Lino Care, ein soziales Ticketing-System
 für den Einsatz in Organisationen, die Menschen helfen, füreinander zu
 sorgen.
 
-Während :ref:`noi` als Ticketing-System für das :ref:`Lino-Team
-<lino.team>` und andere Softwareprojekte benutzt wird, entstand *Lino
-Care* aus der Beobachtung, dass die meisten Konzepte dieser Software
-für soziale Zwecke wiederverwertet werden können. Ein anderer Kontext,
-aber ähnliche Datenstrukturen. Was Programmierer ein *Ticket* nennen,
-nennen wir in Lino Care eine *Bitte*.
+Während :ref:`noi` als Ticketing-System für das Lino-Team und andere
+Softwareprojekte benutzt wird, entstand *Lino Care* aus der Beobachtung, dass
+die meisten Konzepte dieser Software für soziale Zwecke wiederverwertet werden
+können. Ein anderer Kontext, aber ähnliche Datenstrukturen. Was Programmierer
+ein *Ticket* nennen, nennen wir in Lino Care eine *Bitte*.
 
 Es geht um *kostenlosen* Austausch. Hier wird weder von Geld noch von
 sonstigen Zahlungseinheiten gesprochen. Es geht nicht um Abrechnen von
