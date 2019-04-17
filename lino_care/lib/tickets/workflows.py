@@ -82,7 +82,7 @@ class MarkTicketOpened(TicketAction):
 
     
 class MarkTicketStarted(TicketAction):
-    """Mark this ticket as started.
+    """Mark this ticket as working.
     """
     action_name = 'mark_started'
     label = pgettext("verb", "Start")
@@ -93,21 +93,21 @@ class MarkTicketReady(TicketAction):
     """Mark this ticket as ready.
     """
     action_name = 'mark_ready'
-    required_states = "new opened started talk"
+    required_states = "new opened working talk"
     
 class MarkTicketClosed(TicketAction):
     """Mark this ticket as closed.
     """
     # label = pgettext("verb", "Close")
     action_name = 'mark_closed'
-    required_states = 'talk started opened ready'
+    required_states = 'talk working opened ready'
     veto_vote_states = 'assigned'
     # required_vote_states = 'done cancelled'
 
 class MarkTicketRefused(TicketAction):
     """Mark this ticket as refused.
     """
-    required_states = 'talk started opened ready'
+    required_states = 'talk working opened ready'
     veto_vote_states = 'assigned'
     action_name = 'mark_refused'
 
@@ -116,7 +116,7 @@ class MarkTicketTalk(TicketAction):
     """Mark this ticket as talk.
     """
     label = pgettext("verb", "Talk")
-    required_states = "new opened started sleeping ready"
+    required_states = "new opened working sleeping ready"
     action_name = 'mark_talk'
 
     # def get_notify_subject(self, ar, obj):
@@ -131,10 +131,10 @@ TicketStates.clear_transitions()
 # TicketStates.new.add_transition(
 #     required_states="sticky")
 TicketStates.sleeping.add_transition(
-    required_states="new talk opened started")
+    required_states="new talk opened working")
 TicketStates.talk.add_transition(MarkTicketTalk)
 TicketStates.opened.add_transition(MarkTicketOpened)
-TicketStates.started.add_transition(MarkTicketStarted)
+TicketStates.working.add_transition(MarkTicketStarted)
 TicketStates.ready.add_transition(MarkTicketReady)
 TicketStates.closed.add_transition(MarkTicketClosed)
 TicketStates.cancelled.add_transition(MarkTicketRefused)
@@ -187,7 +187,7 @@ class MarkVoteWatching(VoteAction):
     # label = _("Watching")
     managed_by_votable_author = False
     required_states = "invited candidate assigned"
-    # required_votable_states = 'new talk opened started'
+    # required_votable_states = 'new talk opened working'
     # confirmation_msg_template = _("Revoke {voter}'s {vote}.")
     
 
@@ -196,7 +196,7 @@ class MarkVoteWatching(VoteAction):
 #     # label = _("Pro")
 #     managed_by_votable_author = False
 #     required_states = "invited watching candidate assigned"
-#     # required_votable_states = 'new talk opened started'
+#     # required_votable_states = 'new talk opened working'
 #     confirmation_msg_template = _("{voter} speaks for {ticket}.")
 #
 #
@@ -205,7 +205,7 @@ class MarkVoteWatching(VoteAction):
 #     # label = _("Con")
 #     managed_by_votable_author = False
 #     required_states = "invited watching candidate assigned"
-#     # required_votable_states = 'new talk opened started'
+#     # required_votable_states = 'new talk opened working'
 #     confirmation_msg_template = _("{voter} speaks against {ticket}.")
 #
 
@@ -223,7 +223,7 @@ class MarkVoteAssigned(VoteAction):
     # label = pgettext("verb", "Assign")
     managed_by_votable_author = True
     required_states = 'watching candidate'
-    required_votable_states = 'new talk opened started ready'
+    required_votable_states = 'new talk opened working ready'
     #msg_template = _("{user} assigned {voter} for {ticket}.")
     # confirmation_msg_template = _("Assign {voter} for {ticket}.")
 
@@ -249,7 +249,7 @@ class MarkVoteDone(VoteAction):
     # label = _("Done")
     managed_by_votable_author = False
     required_states = 'assigned invited'
-    required_votable_states = 'new talk opened started ready'
+    required_votable_states = 'new talk opened working ready'
     msg_template = _("{user} confirmed {ticket} {state} by {voter}.")
 
     
@@ -268,7 +268,7 @@ class MarkVoteRated(VoteAction):
     label = _("Rate")
     managed_by_votable_author = True
     required_states = 'assigned done invited'
-    required_votable_states = 'new talk opened started ready'
+    required_votable_states = 'new talk opened working ready'
     parameters = dict(
         rating=Ratings.field(),
         comment=dd.RichTextField(_("Comment"), blank=True))
