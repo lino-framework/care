@@ -44,7 +44,7 @@ Lino Care is for managing a catalog of people who care.
     author='Luc Saffre',
     author_email='luc@lino-framework.org',
     url="http://care.lino-framework.org",
-    license='BSD License',
+    license='BSD-2-Clause',
     classifiers="""\
 Programming Language :: Python
 Programming Language :: Python :: 2
@@ -55,7 +55,7 @@ Intended Audience :: Developers
 Intended Audience :: System Administrators
 Intended Audience :: Information Technology
 Intended Audience :: Customer Service
-License :: OSI Approved :: GNU Affero General Public License v3
+License :: OSI Approved :: BSD License
 Operating System :: OS Independent
 Topic :: Software Development :: Bug Tracking
 """.splitlines())
