@@ -32,7 +32,7 @@ PartnerDetail.contact_box = dd.Panel("""
 
 # from lino_xl.lib.addresses.mixins import AddressOwner
 
-@dd.python_2_unicode_compatible
+
 class Person(Person, Commentable):
 
     # do_print = DirectPrintAction()
@@ -187,7 +187,7 @@ Persons.params_layout = 'observed_event start_date end_date skill company'
 #     """, label=_("Contact"))
 
 
-# @dd.python_2_unicode_compatible
+# 
 # class Person(Person):
     
 #     class Meta(Person.Meta):
