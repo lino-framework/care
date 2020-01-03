@@ -1,32 +1,17 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2014-2018 Rumma & Ko Ltd
+# Copyright 2014-2020 Rumma & Ko Ltd
 # License: BSD (see file COPYING for details)
 
 # $ python setup.py test -s tests.PackagesTests.test_packages
 
 SETUP_INFO = dict(
     name='lino-care',
-    version='18.8.0',
+    version='20.1.0',
     install_requires=['lino-xl'],
     # tests_require=['pytest', 'mock'],
     test_suite='tests',
     description=("A database for managing a network of helpers."),
     long_description="""\
-.. image:: https://readthedocs.org/projects/lino/badge/?version=latest
-    :alt: Documentation Status
-    :target: http://lino.readthedocs.io/en/latest/?badge=latest
-
-.. image:: https://coveralls.io/repos/github/lino-framework/care/badge.svg?branch=master
-    :target: https://coveralls.io/github/lino-framework/care?branch=master
-
-.. image:: https://travis-ci.org/lino-framework/care.svg?branch=stable
-    :target: https://travis-ci.org/lino-framework/care?branch=stable
-
-.. image:: https://img.shields.io/pypi/v/lino-care.svg
-    :target: https://pypi.python.org/pypi/lino-care/
-
-.. image:: https://img.shields.io/pypi/l/lino-care.svg
-    :target: https://pypi.python.org/pypi/lino-care/
 
 Lino Care is for managing a catalog of people who care.
 
