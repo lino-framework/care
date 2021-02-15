@@ -28,7 +28,7 @@ from lino.modlib.comments.roles import CommentsUser, CommentsStaff
 #from lino_xl.lib.votes.roles import VotesStaff, VotesUser
 
 from lino.modlib.users.choicelists import UserTypes
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 class User(OfficeUser, CommentsUser, ExcerptsUser, ContactsUser):
