@@ -3,12 +3,6 @@
 # License: BSD (see file COPYING for details)
 """Fixtures specific for the Team variant of Lino Care.
 
-.. autosummary::
-   :toctree:
-
-   models
-
-
 """
 
 from lino_xl.lib.tickets import *
@@ -23,4 +17,3 @@ class Plugin(Plugin):
         'lino.modlib.comments', 'lino.modlib.changes',
         'lino_xl.lib.votes',
         'lino_care.lib.care']
-

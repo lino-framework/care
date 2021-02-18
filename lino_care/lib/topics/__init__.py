@@ -3,17 +3,11 @@
 """
 Lino Care extension of :mod:`lino_xl.lib.topics`.
 
-.. autosummary::
-   :toctree:
-
-    models
-
 """
 
 from lino_xl.lib.topics import Plugin
 
 
 # class Plugin(Plugin):
-    
-#     extends_models = ['Company']
 
+#     extends_models = ['Company']

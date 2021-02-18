@@ -8,7 +8,4 @@ help_texts = {
 'deploy'."""),
     'lino_care.lib.care.user_types.SiteAdmin' : _("""Can do everything."""),
     'lino_care.lib.tickets.Plugin' : _("""Adds the lino_xl.lib.votes plugin."""),
-    'lino_care.lib.tickets.TicketDetail' : _("""Customized detail_lyout for Tickets.  Replaces waiting_for by
-skills"""),
-    'lino_care.lib.users.UserDetail' : _("""Layout of User Detail in Lino Care."""),
 }
