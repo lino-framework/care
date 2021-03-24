@@ -32,12 +32,12 @@ class Migrator(Migrator):
           no partner, create one.
         - Rename Skill.product_cat to topic_group
         - Rename Competence.product to Competence.topic
-           
+
         """
 
         bv2kw = globals_dict['bv2kw']
         products_Product = rt.models.topics.Topic
-        products_ProductCat = rt.models.topics.TopicGroup
+        products_Category = rt.models.topics.TopicGroup
         skills_Competence = rt.models.faculties.Competence
         faculties_Skill = rt.models.faculties.Skill
         tickets_Site = rt.models.tickets.Site
@@ -73,16 +73,16 @@ class Migrator(Migrator):
             kw.update(id=id)
             if name is not None: kw.update(bv2kw('name', name))
             kw.update(description=description)
-            return products_ProductCat(**kw)
+            return products_Category(**kw)
 
         @override(globals_dict)
-        def create_products_product(id, ref, name, description, cat_id):
+        def create_products_product(id, ref, name, description, category_id):
             kw = dict()
             kw.update(id=id)
             kw.update(ref=ref)
             if name is not None: kw.update(bv2kw('name', name))
             if description is not None: kw.update(bv2kw('description', description))
-            kw.update(topic_group_id=cat_id)
+            kw.update(topic_group_id=category_id)
             return products_Product(**kw)
 
         @override(globals_dict)
@@ -191,7 +191,7 @@ class Migrator(Migrator):
     def migrate_from_1_0_2(self, globals_dict):
         """
         - convert stars.Star to votes.Vote
-        
+
         """
         from django.utils import timezone
         # bv2kw = globals_dict['bv2kw']
@@ -252,7 +252,7 @@ class Migrator(Migrator):
     def unused_migrate_from_2016_12_0(self, globals_dict):
         """
         - convert Ticket.assigned_to to votes
-        
+
         """
         votes_Vote = rt.models.votes.Vote
         tickets_Ticket = rt.models.tickets.Ticket
@@ -305,7 +305,7 @@ class Migrator(Migrator):
         - faculties.Faculty.faculty_type -> faculties.Faculty.skill_type
         - users.User now an MTI child of contacts.Person
         - convert Tickets.faculty to faculty.Demand instance
-        
+
         """
         PARTNER_OFFSET = 200
         bv2kw = globals_dict['bv2kw']
@@ -420,7 +420,7 @@ class Migrator(Migrator):
         #     if mail_mode: mail_mode = settings.SITE.models.notify.MailModes.get_by_value(mail_mode)
         #     # if contacts_Partner.objects.exists(id=id):
         #     # return create_mti_child(contacts_Person, id, users.User,modified=modified,created=created,password=password,last_login=last_login,timezone=timezone,username=username,user_type=user_type,initials=initials,partner_id=partner_id,callme_mode=callme_mode,verification_code=verification_code,user_state=user_state,open_session_on_new_ticket=open_session_on_new_ticket,notify_myself=notify_myself,mail_mode=mail_mode)
-            
+
         #     kw = dict()
         #     kw.update(id=id)
         #     kw.update(email=email)
@@ -497,4 +497,3 @@ class Migrator(Migrator):
                 yield faculties_Demand(demander_id=id, skill_id=faculty_id)
 
         return '2017.02.0'
-
