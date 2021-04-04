@@ -1,13 +1,10 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2014-2017 Luc Saffre
+# Copyright 2014-2021 Rumma & Ko Ltd
 # License: BSD (see file COPYING for details)
 """
 Base Django settings for Lino Care applications.
 
 """
-
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from lino.projects.std.settings import *
 from lino.api.ad import _
@@ -33,10 +30,10 @@ class Site(Site):
     custom_layouts_module = 'lino_care.lib.care.layouts'
 
     default_build_method = 'appyodt'
-    
+
     # experimental use of rest_framework:
     # root_urlconf = 'lino_book.projects.team.urls'
-    
+
     # TODO: move migrator to lino_care.projects.team
     migration_class = 'lino_care.lib.care.migrate.Migrator'
 
@@ -109,28 +106,6 @@ class Site(Site):
         # `auth=True`. In Lino Care everybody can see everything.
         return kw
 
-    def setup_quicklinks(self, user, tb):
-        super(Site, self).setup_quicklinks(user, tb)
-        # tb.add_action(self.models.meetings.MyMeetings)
-        # tb.add_action(self.modules.deploy.MyMilestones)
-        # tb.add_action(self.models.tickets.MyTickets)
-        # tb.add_action(self.models.tickets.TicketsToTriage)
-        # tb.add_action(self.models.tickets.TicketsToTalk)
-        # tb.add_action(self.modules.tickets.TicketsToDo)
-        # tb.add_action(self.modules.tickets.RefTickets)
-        # tb.add_action(self.models.tickets.AllTickets)
-        # tb.add_action(
-        #     self.models.tickets.AllTickets.insert_action,
-        #     label=_("Submit a ticket"))
-
-        a = self.models.users.MySettings.default_action
-        tb.add_instance_action(
-            user, action=a, label=_("My settings"))
-        # handler = self.action_call(None, a, dict(record_id=user.pk))
-        # handler = "function(){%s}" % handler
-        # mysettings = dict(text=_("My settings"),
-        #                   handler=js_code(handler))
-        
 
 # the following line should not be active in a checked-in version
 #~ DATABASES['default']['NAME'] = ':memory:'
@@ -139,4 +114,3 @@ USE_TZ = True
 # TIME_ZONE = 'Europe/Brussels'
 # TIME_ZONE = 'Europe/Tallinn'
 TIME_ZONE = 'UTC'
-
