@@ -10,13 +10,14 @@
 
 extensions = []
 extlinks = {}
+intersphinx_mapping = {}
 
 from lino.sphinxcontrib import configure
 configure(globals())
 # configure(globals(), 'lino_care.projects.team.settings.doctests')
 # configure(globals(), 'lino_book.projects.min1.settings.doctests')
 
-extlinks.update(ticket=('http://bugs.saffre-rumma.net/tickets/Ticket/%s', '#'))
+# extlinks.update(ticket=('https://jane.mylino.net/#/api/tickets/AllTickets/%s', '#'))
 
 extensions += ['lino.sphinxcontrib.logo']
 
@@ -28,11 +29,10 @@ help_texts_builder_targets = {
 # from django.conf import settings
 # settings.SITE.title = "Lino Care"
 
-intersphinx_mapping = {}
 from atelier.sphinxconf import interproject
 interproject.configure(globals(), 'atelier')
-intersphinx_mapping['cg'] = ('https://community.lino-framework.org/', None)
-intersphinx_mapping['book'] = ('https://www.lino-framework.org/', None)
+# intersphinx_mapping['cg'] = ('https://community.lino-framework.org/', None)
+# intersphinx_mapping['book'] = ('https://www.lino-framework.org/', None)
 
 
 
