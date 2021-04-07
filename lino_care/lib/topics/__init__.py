@@ -1,5 +1,5 @@
 # Copyright 2015-2016 Rumma & Ko Ltd
-# License: BSD (see file COPYING for details)
+# License: GNU Affero General Public License v3 (see file COPYING for details)
 """
 Lino Care extension of :mod:`lino_xl.lib.topics`.
 
