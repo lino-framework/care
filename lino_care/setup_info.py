@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2014-2020 Rumma & Ko Ltd
+# Copyright 2014-2021 Rumma & Ko Ltd
 # License: GNU Affero General Public License v3 (see file COPYING for details)
 
 # $ python setup.py test -s tests.PackagesTests.test_packages
@@ -10,7 +10,7 @@ SETUP_INFO = dict(
     install_requires=['lino-xl'],
     # tests_require=['pytest', 'mock'],
     test_suite='tests',
-    description=("A database for managing a network of helpers."),
+    description=("A Lino Django application for managing a network of helpers."),
     long_description="""\
 
 Lino Care is for managing a catalog of people who care.
@@ -26,8 +26,8 @@ Lino Care is for managing a catalog of people who care.
 
 
 """,
-    author='Luc Saffre',
-    author_email='luc@lino-framework.org',
+    author='Rumma & Ko Ltd',
+    author_email='info@lino-framework.org',
     url="https://github.com/lino-framework/care",
     license_files=['COPYING'],
     classifiers="""\
