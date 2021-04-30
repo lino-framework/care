@@ -2,7 +2,7 @@
 The ``lino-care`` package
 =========================
 
-
+Warning: This repository has moved to https://gitlab.com/lino-framework/care
 
 
 Lino Care is for managing a catalog of people who care.
